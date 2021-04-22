@@ -80,7 +80,9 @@ gmod_server: .docker_image_record/$(PROJECT_NAME)
 	docker run \
 		--name $(CONTAINER_NAME) \
 		-v ${CURDIR}:/home/steam/steamcmd/$(PROJECT_NAME) \
-		-net=host \
+		-p 27015:27015/udp \
+		-p 27015:27015 \
+		-p 27005:27005/udp \
 		--rm -it -d $(PROJECT_NAME) \
 		./arena/bin/gmod.sh
 
