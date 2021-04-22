@@ -80,9 +80,9 @@ gmod_server: .docker_image_record/$(PROJECT_NAME)
 	docker run \
 		--name $(CONTAINER_NAME) \
 		-v ${CURDIR}:/home/steam/steamcmd/$(PROJECT_NAME) \
-		-p 27015:27015 \
-		--rm -it $(PROJECT_NAME) \
-		bash
+		-net=host \
+		--rm -it -d $(PROJECT_NAME) \
+		./arena/bin/gmod.sh
 
 gmod_server_ip:
 	@docker logs bibrax | grep 'Public IP is'
