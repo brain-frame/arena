@@ -1,0 +1,13 @@
+// Install Garry's Mode Dedicated Server
+
+// Login to Steam servers
+login anonymous
+
+// Make gmod install in /gmod directory
+force_install_dir ./gmod/
+
+// 4020 is the App number of Garry's Mod Dedicated server
+app_update 4020
+
+// Exit steamcmd
+quit
